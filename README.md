@@ -5,7 +5,7 @@ VISTA is a comprehensive home rental booking system application built using Next
 ![vista-home-page](https://github.com/remediios/vista/assets/60504347/68c953b8-526f-48e7-8a4d-f106fed1a40f)
 
 
-### [Software Live Demo](https://vista-woad.vercel.app)
+### [Software Live Demo](https://rntal.atl5d.com)
 
 ## Table of Contents
 
