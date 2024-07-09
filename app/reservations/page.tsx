@@ -60,7 +60,7 @@ const ReservationsPage = async () => {
               key={item.Home?.id}
               description={item.Home?.description as string}
               location={item.Home?.country as string}
-              pathName="/favourites"
+              pathName="/loves"
               homeId={item.Home?.id as string}
               imagePath={item.Home?.photo as string}
               price={item.Home?.price as number}

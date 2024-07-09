@@ -16,7 +16,7 @@ model User {
   lastName     String
   profileImage String?
   Home         Home[]
-  Favourite    Favourite[]
+  Love    Love[]
   Reservation  Reservation[]
 }
 

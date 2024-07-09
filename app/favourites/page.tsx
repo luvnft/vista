@@ -5,7 +5,7 @@ import NoItem from '../components/home/NoItem';
 import ListingCard from '../components/home/ListingCard';
 import { unstable_noStore as noStore } from 'next/cache';
 
-async function getFavouritesData(userId: string) {
+async function getLoveData(userId: string) {
   noStore();
   const data = await prisma.favourite.findMany({
     where: {
@@ -28,31 +28,31 @@ async function getFavouritesData(userId: string) {
   return data;
 }
 
-const FavouritesPage = async () => {
+const LovePage = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
   if (!user) return redirect('/');
 
-  const favouritesData = await getFavouritesData(user.id);
+  const loveData = await getLoveData(user.id);
 
   return (
     <section className="container mx-auto px-5 lg:px-10 mt-10 mb-[50px]">
-      <h2 className="text-3xl font-semibold tracking-tight">Your Favourites</h2>
+      <h2 className="text-3xl font-semibold tracking-tight">Your Loves</h2>
 
-      {favouritesData.length === 0 ? (
+      {loveData.length === 0 ? (
         <NoItem
-          title="Sorry, no rental homes were found on your favourites..."
-          description="Please favourite a property and come back!"
+          title="Sorry, no rental homes were found in your love list..."
+          description="Please love a property and come back!"
         />
       ) : (
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-8 mt-10">
-          {favouritesData.map((item) => (
+          {loveData.map((item) => (
             <ListingCard
               key={item.Home?.id}
               description={item.Home?.description as string}
               location={item.Home?.country as string}
-              pathName="/favourites"
+              pathName="/loves"
               homeId={item.Home?.id as string}
               imagePath={item.Home?.photo as string}
               price={item.Home?.price as number}
@@ -69,4 +69,4 @@ const FavouritesPage = async () => {
   );
 };
 
-export default FavouritesPage;
+export default LovePage;

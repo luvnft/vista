@@ -54,8 +54,8 @@ const UserNav = async () => {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/favourites" className="w-full">
-                My Favourites
+              <Link href="/loves" className="w-full">
+                My Loves
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
